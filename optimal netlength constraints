@@ -1,0 +1,11 @@
+set_db [get_db clock trees 200M].cts_top_fanout_threshold 30
+
+set_db [get_db clock_trees 400M] .cts_top_fanout_threshold 30
+
+set_db cts_inverter_cells_leaf (cti_f8_dh_126pp cti_f6_dh_126pp cti_f10_dh_126pp)
+
+set_db cts_inverter_cells_top (cti_f10_dh_126pp cti_f12_dh_126pp)
+
+set_db [get_db clock trees 200M] .cts_max_source_to_sink_net_length 240
+
+set_db [get_db clock_trees 400M].cts_max_source_to_sink_net_length 240
