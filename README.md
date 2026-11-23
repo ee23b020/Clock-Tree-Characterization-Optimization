@@ -103,3 +103,17 @@ Different experiments had been conducted:
 Add below settings for low power clock tree design
 
 in override/innovus_config.tcl after providing CTS options and in override/physical_design.tcl after delete_clock_tree_spec
+
+set_db [get_db clock trees 200M].cts_top_fanout_threshold 30
+
+set_db [get_db clock_trees 400M] .cts_top_fanout_threshold 30
+
+set_db cts_inverter_cells_leaf (cti_f8_dh_126pp cti_f6_dh_126pp cti_f10_dh_126pp)
+
+set_db cts_inverter_cells_top (cti_f10_dh_126pp cti_f12_dh_126pp)
+
+set_db [get_db clock trees 200M] .cts_max_source_to_sink_net_length 240
+
+set_db [get_db clock_trees 400M].cts_max_source_to_sink_net_length 240
+
+More Netlength for top level is not suggested as complete timing will go on toss if there is cross talk. And Higher Drive Strength cells are to be used for Leaf level Cells since there can be high fanout
